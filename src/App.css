@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+.main_div{
+  width: 100%;
+  height: 100vh;
+  background:#6983aa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.center_div{
+  width: 25%;
+  height: 80vh;
+  background: white;
+  border-radius: 15px ;
+
+}
+h1{
+  background-color:blueviolet;
+}
+input{
+  border: none;
+  border-bottom: 5px solid blueviolet;
+  height: 50px;
+  outline: none;
+  font-size: 25px;
+  width: 70%;
+  text-align: center;
+}
+input::placeholder{
+  font-size: 25px;
+}
+button{
+  border-radius: 48%;
+  font-size: 25px;
+  background-color: #6983aa;
+  color: white;
+  border: none;
+
+}
+ol{
+  margin-top: 30px;
+}
+ol li{
+  padding-left: 0px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 40px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  
+}

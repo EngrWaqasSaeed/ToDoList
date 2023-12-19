@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import "./App.css"
+import Todo from './Todo';
+export default function App() {
+  const [inputList, setInputList]=useState("Buy mango");
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [item,setItem]=useState([]);
+
+
+  const itemEvent=(e)=>{
+    setInputList(e.target.value)
+  };
+
+  const listOfitem=()=>{
+    setItem(   (alreadysetItemsArrayData) => {
+      return[...alreadysetItemsArrayData, inputList];
+    })
+  }
+  
+
+  return(
+    <>
+      <div className="main_div">
+        <div className="center_div">
+          <br/>
+          <h1>Todo List</h1>
+          <br />
+          <input type="text" placeholder="Add a item" onChange={itemEvent} />
+
+          <button onClick={listOfitem}>+</button>
+          <ol>
+            {inputList}
+
+
+            { 
+            item.map( (itemlistvalue)=>{
+              return <Todo text={itemlistvalue}/>
+            })
+            }
+
+
+          </ol>
+        </div>
+      </div>
+    
+    </>
+    )
 }
-
-export default App;
